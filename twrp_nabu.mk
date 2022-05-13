@@ -14,6 +14,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Installs gsi keys into ramdisk, to boot a2 developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 # Inherit from nabu device
 $(call inherit-product, device/xiaomi/nabu/device.mk)
 
