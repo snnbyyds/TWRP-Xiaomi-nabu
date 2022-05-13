@@ -5,12 +5,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from common AOSP config
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+# Installs gsi keys into ramdisk, to boot a2 developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # Inherit from nabu device
 $(call inherit-product, device/xiaomi/nabu/device.mk)
 
