@@ -46,6 +46,7 @@ TW_INCLUDE_REPACKTOOLS := true
 # Kernel
 BOARD_KERNEL_CMDLINE := console=tty0,115200n8 androidboot.hardware=qcom androidboot.console=tty0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=7 androidboot.usbcontroller=a600000.dwc3 buildvariant=user
 BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 BOARD_BOOTIMG_HEADER_VERSION := 3
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
